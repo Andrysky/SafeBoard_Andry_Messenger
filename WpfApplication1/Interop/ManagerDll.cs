@@ -28,6 +28,6 @@ namespace WpfApplication1.Interop
 		//[DllImport(TodoManagerLib, CallingConvention = CallingConvention.Cdecl)]
 		//public static extern int GetItems([MarshalAs(UnmanagedType.LPArray)][Out] TodoItem[] todoItems, long itemsLength);
 
-		private const string TodoManagerLib = "C:/Users/Andry/Source/Repos/SafeBoardMessenger/Components/messenger/test1/Debugdll.dll";
+		private const string TodoManagerLib = "../../../Debug/interop_dll.dll";
 	}
 }

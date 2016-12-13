@@ -1,0 +1,3 @@
+[submodule "SafeBoardMessenger"]
+	path = SafeBoardMessenger
+	url = git@github.com:kukushechkin/SafeBoardMessenger.git
