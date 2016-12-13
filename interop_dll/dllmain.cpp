@@ -1,7 +1,6 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-//#include "todo_manager.h"
 
-//static todo_sample::TodoManager g_todoManager;
+#include <messenger/messenger.h>
 
 extern "C"
 {

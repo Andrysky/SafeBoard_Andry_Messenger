@@ -28,6 +28,7 @@ namespace WpfApplication1
 
 		private void button_Click(object sender, RoutedEventArgs e)
 		{
+
 			ManagerDll.Connect();
 			ManagerDll.plus(5);
 			int a = ManagerDll.get();
