@@ -66,7 +66,10 @@ namespace WpfApplication1.Interop
 		[DllImport(TodoManagerLib, CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
 		//[return: MarshalAs(UnmanagedType.LPStr)]
 		//public static extern string ReceiveMessage1();
-		public static extern IntPtr ReceiveMessage1();
+		public static extern IntPtr ReceiveMessage();
+
+		[DllImport(TodoManagerLib, CallingConvention = CallingConvention.Cdecl)]
+		public static extern void SendMessage([MarshalAs(UnmanagedType.LPStr)] string Name, [MarshalAs(UnmanagedType.LPStr)] string mes);
 
 		[DllImport(TodoManagerLib, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int GetActiveUsers([MarshalAs(UnmanagedType.LPArray)][Out] IntPtr[] array);

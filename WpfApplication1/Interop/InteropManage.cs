@@ -54,6 +54,14 @@ namespace WpfApplication1.Interop
 			return users;
 		}
 
+		public string ReceiveMessage() {
+			return Marshal.PtrToStringAnsi(ManagerDll.ReceiveMessage());
+		}
+
+		public void SendMessage(string name, string mes) {
+			ManagerDll.SendMessage(name, mes);
+		}
+
 		public void Dispose()
 		{
 			if (_isDisposed)

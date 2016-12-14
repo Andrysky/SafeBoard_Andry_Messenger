@@ -8,6 +8,7 @@ extern "C"
 {
 	int temp_test;
 	Client *client;
+	messenger::UserList list;
 
 	void __declspec(dllexport) Init() {
 		client = new Client;
@@ -58,8 +59,8 @@ extern "C"
 		int b;
 	}
 
-	void  __declspec(dllexport) SendMessage1(const char* recpt, const char* text) {
-		int a;
+	void  __declspec(dllexport) SendMessage(const char* recpt, const char* text) {
+		client->SendMessage(recpt, text);
 	}
 
 	__declspec(dllexport) char** GetActiveUsers_old() {
@@ -86,26 +87,32 @@ extern "C"
 	}
 		 
 	__declspec(dllexport) char* ReceiveUserL_get() {
-		string test("hi inter");
-		//const char* cctemp = test.c_str();
-		//return cctemp;
-		//return "Returning a static string!";
-		char * writable = new char[test.size() + 1];
-		std::copy(test.begin(), test.end(), writable);
-		writable[test.size()] = '\0';
-		return writable;
+		string user = list.back().identifier;
+		list.pop_back();
+
+		char * ret_str = new char[user.size() + 1];
+		copy(user.begin(), user.end(), ret_str);
+		ret_str[user.size()] = '\0';
+		return ret_str;
 	}
 
 	__declspec(dllexport) bool ReceiveUserL_all() {
-		return false;
+		return (list.size() == 0);
 	}
 
 	__declspec(dllexport) void ReceiveUserL_start() {
-		return;
+		list = client->GetActiveUsers();
 	}
 
 
-	__declspec(dllexport) char* ReceiveMessage1() {
+	__declspec(dllexport) char* ReceiveMessage() {
+		string mes = client->ReceiveMessage();
+		
+		char * ret_str = new char[mes.size() + 1];
+		copy(mes.begin(), mes.end(), ret_str);
+		ret_str[mes.size()] = '\0';
+		return ret_str;
+
 		//string test("hi inter");
 		//return test.data();
 

@@ -54,9 +54,14 @@ namespace WpfApplication1
 			string test2 = Marshal.PtrToStringAnsi(array[1]);
 			*/
 			InteropManage Client = new InteropManage();
-			Client.set_server("127.0.0.1", 0, "Andry", "");
+			Client.set_server("127.0.0.1", 0, "Andry", "Andry00");
 			Client.Conect();
 
+			List<string> list = Client.list_user();
+			//Client.SendMessage("Andry1", "hi it i");
+			string text = Client.ReceiveMessage();
+			
+			//string text1 = Client.ReceiveMessage();
 
 		}
 		private ManagerDll _nativeManager;
