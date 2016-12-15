@@ -5,9 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="438.043" Width="629.348">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="176,170,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button" Content="conect" HorizontalAlignment="Left" Margin="204,35,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="311" Margin="10,35,0,0" VerticalAlignment="Top" Width="170">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="button1" Content="update" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="99" Click="button1_Click"/>
+        <Button x:Name="button2" Content="send" HorizontalAlignment="Left" Margin="443,272,0,0" VerticalAlignment="Top" Width="75" Click="button2_Click"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="50" Margin="237,242,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="133"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="53" Margin="204,102,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="142"/>
+        <Button x:Name="button3" Content="Button" HorizontalAlignment="Left" Margin="393,118,0,0" VerticalAlignment="Top" Width="75" Click="button3_Click"/>
+        <TextBox x:Name="textip" HorizontalAlignment="Left" Height="23" Margin="217,7,0,0" TextWrapping="Wrap" Text="195.123.211.113" VerticalAlignment="Top" Width="110" />
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="469,10,0,0" VerticalAlignment="Top" Width="75" Password="Andry00"/>
+        <Button x:Name="button4" Content="Button" HorizontalAlignment="Left" Margin="284,35,0,0" VerticalAlignment="Top" Width="75" Click="button4_Click"/>
+        <TextBox x:Name="textName" HorizontalAlignment="Left" Height="23" Margin="332,7,0,0" TextWrapping="Wrap" Text="Andry" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

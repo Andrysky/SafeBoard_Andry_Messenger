@@ -78,7 +78,7 @@ public:
 		msg.type = messenger::message_content_type::Text;
 		std::copy(text.begin(), text.end(), std::back_inserter(msg.data));
 		//m_messenger->SendMessage(recpt + "@localhost", msg);
-		m_messenger->SendMessage(recpt + "@localhost", msg);
+		m_messenger->SendMessage(recpt, msg);
 	}
 
 	std::string ReceiveMessage()
